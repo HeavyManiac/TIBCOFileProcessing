@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_Ks6uILZtEeqhtOIjWFhXxQ" targetNamespace="http://tns.tibco.com/bw/composite/FileProcessing.tibco.test" name="FileProcessing.tibco.test" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_LBeo4LZtEeqhtOIjWFhXxQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_LBlWkLZtEeqhtOIjWFhXxQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_LBoZ4LZtEeqhtOIjWFhXxQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_LBsEQLZtEeqhtOIjWFhXxQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_LBvHkLZtEeqhtOIjWFhXxQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_LBxj0LZtEeqhtOIjWFhXxQ" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_LB11QLZtEeqhtOIjWFhXxQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_K4-0MLZtEeqhtOIjWFhXxQ" name="ComponentcreateFiles" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_K4-0MbZtEeqhtOIjWFhXxQ" processName="fileprocessing.tibco.test.CreateFile"/>
+  </sca:component>
+  <sca:component xmi:id="_RSC6ULa1EeqhtOIjWFhXxQ" name="ComponentCreateFileWrongType" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_RSC6Uba1EeqhtOIjWFhXxQ" processName="fileprocessing.tibco.test.CreateFileWrongType"/>
+  </sca:component>
+</sca:composite>
