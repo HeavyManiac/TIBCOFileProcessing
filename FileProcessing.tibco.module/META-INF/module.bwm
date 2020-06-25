@@ -7,7 +7,21 @@
   <sca:property xmi:id="_uuCTULZqEeqSiZ09hI-04w" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_uuGkwLZqEeqSiZ09hI-04w" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
   <sca:property xmi:id="_uuKPILZqEeqSiZ09hI-04w" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_LnyaILadEeqhtOIjWFhXxQ" name="Directory_New" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_OFlSQLadEeqhtOIjWFhXxQ" name="Directory_InProgress" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_RcDe0LadEeqhtOIjWFhXxQ" name="Directory_Processed" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_TJaYgLadEeqhtOIjWFhXxQ" name="Directory_Error" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_U-cAcLadEeqhtOIjWFhXxQ" name="Directory_Msg" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_XG5hwLadEeqhtOIjWFhXxQ" name="Process_File_Type" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_vW6LMLasEeqhtOIjWFhXxQ" name="Poll_Directory_New" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_z1YhoLasEeqhtOIjWFhXxQ" name="Poll_Directory_InProgress" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_uT4t8LZqEeqSiZ09hI-04w" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_uT5VALZqEeqSiZ09hI-04w" processName="fileprocessing.tibco.module.Process"/>
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_uT5VALZqEeqSiZ09hI-04w" processName="fileprocessing.tibco.module.NEWFilePoller"/>
+  </sca:component>
+  <sca:component xmi:id="_4tJioLZ8EeqhtOIjWFhXxQ" name="ComponentFileNewProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_4tJiobZ8EeqhtOIjWFhXxQ" processName="fileprocessing.tibco.module.INPROCESSFile"/>
+  </sca:component>
+  <sca:component xmi:id="_qeS7oLaaEeqhtOIjWFhXxQ" name="ComponentPROCESSINGFile" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_qeS7obaaEeqhtOIjWFhXxQ" processName="fileprocessing.tibco.module.PROCESSINGFile"/>
   </sca:component>
 </sca:composite>
