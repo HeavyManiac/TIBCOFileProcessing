@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:mapper_1593395550651="http://www.tibco.com/namespaces/tnt/plugins/generalactivities/mapper/1593395550651" xmi:id="_oEHeULmyEeqGb5Xu-HNO0w" name="fileprocessing.tibco.module.DataFormatResource" type="dataformat:DataFormat">
+  <imports xmi:id="_xxwL0LmzEeqGb5Xu-HNO0w" importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/namespaces/tnt/plugins/generalactivities/mapper/1593395550651"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_oFmsELmyEeqGb5Xu-HNO0w" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" fillCharacter="Space" schemaElementQName="mapper_1593395550651:MapperInput" lineLength="201" fieldOffsetsStr="rowdata(0,200)">
+    <fieldOffsets xmi:id="_xzkwwLmzEeqGb5Xu-HNO0w" name="rowdata" end="200"/>
+  </jndi:configuration>
+</jndi:namedResource>
