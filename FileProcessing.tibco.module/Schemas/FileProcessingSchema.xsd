@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xsd:schema xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jmscustom4369b9cf-9bde-4ac7-89bd-5702bb88e2f9" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jmscustom4369b9cf-9bde-4ac7-89bd-5702bb88e2f9">
+<xsd:schema xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" 
+xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jmscustom4369b9cf-9bde-4ac7-89bd-5702bb88e2f9" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jmscustom4369b9cf-9bde-4ac7-89bd-5702bb88e2f9">
+
   <xsd:element name="File" tibex:source="bw.jms.send">
     <xsd:complexType>
       <xsd:sequence>
