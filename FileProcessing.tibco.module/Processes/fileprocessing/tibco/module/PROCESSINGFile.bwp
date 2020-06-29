@@ -9,10 +9,15 @@
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
     xmlns:ns0="http://www.tibco.com/namespaces/tnt/plugins/file"
     xmlns:ns1="http://www.tibco.com/namespaces/tnt/plugins/file/v2"
+    xmlns:ns10="http://www.example.org/Data.xsd"
     xmlns:ns2="http://tns.tibco.com/bw/palette/internal/activityerror+bw.file.read"
     xmlns:ns3="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/activityerror+bw.file.copy"
     xmlns:ns5="http://tns.tibco.com/bw/palette/internal/activityerror+bw.file.remove"
+    xmlns:ns6="http://schemas.tibco.com/bw/plugins/file/5.0/fileExceptions"
+    xmlns:ns7="http://www.example.com/namespaces/tns/1593135260998"
+    xmlns:ns8="http://www.example.com/namespaces/tns/1593135555877"
+    xmlns:ns9="http://www.example.com/namespaces/tns/1593401463550"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -470,119 +475,6 @@
             </xs:complexType>
             <xs:element name="ActivityInput" type="tns:LogParametersType"/>
         </xs:schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://schemas.tibco.com/bw/plugins/file/5.0/fileExceptions"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.tibco.com/bw/plugins/file/5.0/fileExceptions">
-            <element name="FileException" type="tns:FileExceptionType"/>
-            <complexType name="FileExceptionType">
-                <sequence>
-                    <element name="msg" type="string"/>
-                    <element minOccurs="0" name="msgCode" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="ActivityTimedOutException" type="tns:complexTypeFault"/>
-            <complexType name="complexTypeFault">
-                <sequence>
-                    <element name="msg" type="string"/>
-                    <element minOccurs="0" name="msgCode" type="string"/>
-                </sequence>
-            </complexType>
-            <complexType name="FileNotFoundExceptionType">
-                <complexContent>
-                    <extension base="tns:FileExceptionType">
-                        <sequence>
-                            <element name="fileName" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="FileNotFoundException" type="tns:FileNotFoundExceptionType"/>
-            <complexType name="UnsupportedEncodingExceptionType">
-                <complexContent>
-                    <extension base="tns:FileExceptionType">
-                        <sequence>
-                            <element name="encoding" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="UnsupportedEncodingException" type="tns:UnsupportedEncodingExceptionType"/>
-            <complexType name="FileIOExceptionType">
-                <complexContent>
-                    <extension base="tns:FileExceptionType"/>
-                </complexContent>
-            </complexType>
-            <element name="FileIOException" type="tns:FileIOExceptionType"/>
-            <complexType name="IllegalRenameExceptionType">
-                <complexContent>
-                    <extension base="tns:FileExceptionType">
-                        <sequence>
-                            <element name="fromFileName" type="string"/>
-                            <element name="toFileName" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="IllegalRenameException" type="tns:IllegalRenameExceptionType"/>
-            <complexType name="FileAlreadyExistsExceptionType">
-                <complexContent>
-                    <extension base="tns:FileExceptionType">
-                        <sequence>
-                            <element name="fileName" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="FileAlreadyExistsException" type="tns:FileAlreadyExistsExceptionType"/>
-            <complexType name="IllegalCopyExceptionType">
-                <complexContent>
-                    <extension base="tns:FileExceptionType">
-                        <sequence>
-                            <element name="fromFileName" type="string"/>
-                            <element name="toFileName" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="IllegalCopyException" type="tns:IllegalCopyExceptionType"/>
-            <!-- fault signature for ReadFile activity -->
-            <complexType name="ReadFileFaultDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="1" ref="tns:FileNotFoundException"/>
-                    <element maxOccurs="1" minOccurs="1" ref="tns:UnsupportedEncodingException"/>
-                    <element maxOccurs="1" minOccurs="1" ref="tns:FileIOException"/>
-                </choice>
-            </complexType>
-            <element name="ReadFileFaultData" type="tns:ReadFileFaultDataType"/>
-        </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.file.copy"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://schemas.tibco.com/bw/plugins/file/5.0/fileExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.file.copy">
-            <import namespace="http://schemas.tibco.com/bw/plugins/file/5.0/fileExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FileNotFoundException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:IllegalCopyException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FileAlreadyExistsException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FileIOException"/>
-                </choice>
-            </complexType>
-        </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.file.remove"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://schemas.tibco.com/bw/plugins/file/5.0/fileExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.file.remove">
-            <import namespace="http://schemas.tibco.com/bw/plugins/file/5.0/fileExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FileNotFoundException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FileIOException"/>
-                </choice>
-            </complexType>
-        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="jluev"
         createdOn="Wed Jun 24 22:16:37 MDT 2020" description=""
@@ -648,8 +540,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
-                                    <layoutConstraint x="-57"
-                                    xsi:type="notation:Bounds" y="100"/>
+                                    <layoutConstraint x="-69"
+                                    xsi:type="notation:Bounds" y="14"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -683,227 +575,33 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="793"
+                                    <layoutConstraint x="830"
                                     xsi:type="notation:Bounds" y="100"/>
                                     </children>
-                                    <children type="4005">
-                                    <children type="3033">
                                     <children type="4002">
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activities.0"/>
-                                    <layoutConstraint
-                                    xsi:type="notation:Bounds" y="40"/>
-                                    </children>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-                                    <children type="3007">
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activities.2"/>
-                                    <layoutConstraint
-                                    width="148"
-                                    x="194"
-                                    xsi:type="notation:Bounds" y="61"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activities.3"/>
-                                    <layoutConstraint
-                                    width="165"
-                                    x="11"
-                                    xsi:type="notation:Bounds" y="61"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activities.4"/>
-                                    <layoutConstraint
-                                    x="382"
-                                    xsi:type="notation:Bounds" y="61"/>
-                                    </children>
-                                    <styles xsi:type="notation:DrawerStyle"/>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-                                    <children type="3034">
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activities.1"/>
-                                    <layoutConstraint
-                                    xsi:type="notation:Bounds" y="40"/>
-                                    </children>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
                                     </children>
                                     <styles fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
@@ -911,230 +609,34 @@
                                     backgroundColor="16777215"
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint
-                                    height="165" width="593"
-                                    x="167"
-                                    xsi:type="notation:Bounds" y="37"/>
-                                    </children>
-                                    <children type="4005">
-                                    <children type="3033">
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.3/@activities.0"/>
-                                    <layoutConstraint
-                                    xsi:type="notation:Bounds" y="40"/>
-                                    </children>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-                                    <children type="3007">
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.3/@activities.2"/>
-                                    <layoutConstraint
-                                    width="209"
-                                    x="11"
-                                    xsi:type="notation:Bounds" y="61"/>
+                                    <layoutConstraint x="830"
+                                    xsi:type="notation:Bounds" y="307"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-
                                     <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.3/@activities.3"/>
-                                    <layoutConstraint
-                                    x="236"
-                                    xsi:type="notation:Bounds" y="61"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.3/@activities.4"/>
-                                    <layoutConstraint
-                                    x="385"
-                                    xsi:type="notation:Bounds" y="61"/>
-                                    </children>
-                                    <styles xsi:type="notation:DrawerStyle"/>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
-                                    </children>
-                                    <children type="3034">
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.3/@activities.1"/>
-                                    <layoutConstraint
-                                    xsi:type="notation:Bounds" y="40"/>
-                                    </children>
-                                    <styles xsi:type="notation:SortingStyle"/>
-                                    <styles xsi:type="notation:FilteringStyle"/>
                                     </children>
                                     <styles fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
@@ -1142,12 +644,10 @@
                                     backgroundColor="16777215"
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
                                     <layoutConstraint
-                                    height="165" width="593"
-                                    x="167"
-                                    xsi:type="notation:Bounds" y="206"/>
+                                    width="165" x="347"
+                                    xsi:type="notation:Bounds" y="100"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1181,8 +681,223 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
-                                    <layoutConstraint x="793"
-                                    xsi:type="notation:Bounds" y="276"/>
+                                    <layoutConstraint
+                                    width="250" x="281"
+                                    xsi:type="notation:Bounds" y="429"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.5"/>
+                                    <layoutConstraint
+                                    width="160" x="559"
+                                    xsi:type="notation:Bounds" y="100"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
+                                    <layoutConstraint
+                                    width="139" x="36"
+                                    xsi:type="notation:Bounds" y="100"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
+                                    <layoutConstraint x="830"
+                                    xsi:type="notation:Bounds" y="188"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <layoutConstraint x="233"
+                                    xsi:type="notation:Bounds" y="100"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
+                                    <layoutConstraint
+                                    width="170" x="316"
+                                    xsi:type="notation:Bounds" y="268"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.10"/>
+                                    <layoutConstraint
+                                    width="160" x="559"
+                                    xsi:type="notation:Bounds" y="429"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1196,8 +911,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="583"
-                                    width="1142" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="701"
+                                    width="1186" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1206,8 +921,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="365" width="444"
-                                x="30" xsi:type="notation:Bounds" y="20"/>
+                            <layoutConstraint height="1396" width="2338" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1217,7 +931,8 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="409" width="519" xsi:type="notation:Bounds"/>
+                    <layoutConstraint height="1420" width="2338" x="1"
+                        xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1225,15 +940,15 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="659" width="1487" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="777" width="1531" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
             <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
+                <layoutConstraint x="5" xsi:type="notation:Location" y="-14"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
@@ -1241,52 +956,8 @@
             <bendpoints points="[25, 0, -416, 0]$[178, 0, -263, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.0" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@links/@children.1"/>
-            <bendpoints points="[46, 0, -115, 0]$[137, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@links/@children.0"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@links/@children.2"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.1/@children.2"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.2/@children.0" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@links/@children.3"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1294,73 +965,124 @@
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
             <bendpoints
-                points="[25, 1, -435, -168]$[103, 1, -357, -168]$[103, 169, -357, 0]$[178, 169, -282, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[33, 25, -268, -304]$[62, 25, -239, -304]$[62, 329, -239, 0]$[213, 329, -88, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3/@children.1/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3/@children.1/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.3/@links/@children.0"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3/@children.1/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3/@children.1/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.3/@links/@children.1"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3/@children.1/@children.0" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.3/@links/@children.2"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3/@children.1/@children.2"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3/@children.2/@children.0" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.3/@links/@children.3"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.2"/>
-            <bendpoints points="[283, -6, -129, 0]$[388, 0, -24, 6]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[46, 0, -321, 0]$[185, 0, -182, 0]$[324, 0, -43, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.3"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[88, 0, -176, 0]$[221, 0, -43, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
+            <bendpoints points="[25, 0, -194, 0]$[195, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
+            <bendpoints
+                points="[43, -2, -209, -209]$[166, -2, -86, -209]$[166, 209, -86, 2]$[228, 209, -24, 2]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <bendpoints
+                points="[25, 0, -78, -85]$[34, 0, -69, -85]$[34, 85, -69, 0]$[79, 85, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
+            <bendpoints
+                points="[43, 0, -209, -88]$[165, 0, -87, -88]$[165, 88, -87, 0]$[228, 88, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.8"/>
+            <bendpoints points="[25, 0, -110, 0]$[90, 0, -45, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.9"/>
+            <bendpoints
+                points="[0, 25, -185, -151]$[0, 176, -185, 0]$[161, 176, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.10"/>
+            <bendpoints
+                points="[48, 0, -210, -161]$[257, 0, -1, -161]$[257, 137, -1, -24]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.11"/>
+            <bendpoints
+                points="[43, 0, -209, 122]$[168, 0, -84, 122]$[168, -107, -84, 15]$[228, -107, -24, 15]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1372,17 +1094,18 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/file" prefix="tns2"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/bw/xpath/bw-custom-functions" prefix="bw"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.com/namespaces/tns/1593135555877" prefix="tns3"/>
     </tibex:NamespaceRegistry>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1593135260998"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1593135555877"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Data.xsd"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
         <bpws:variable element="ns0:EventSourceOuputTextClass"
             name="FilePoller" sca-bpel:internal="true"/>
-        <bpws:variable name="Origin" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>C:\tibco\files\FileProcessing\2.inprogress\*.*</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
+        <bpws:variable name="OriginFullFileName" type="xsd:string"/>
         <bpws:variable name="NewFilename" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             tibex:propertySource="Directory_New" type="xsd:string"/>
@@ -1396,30 +1119,22 @@
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
             tibex:propertySource="Poll_Directory_InProgress" type="xsd:string"/>
-        <bpws:variable element="ns0:CopyActivityConfig"
-            name="CopyToProcessed-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns4:ActivityErrorData"
-            name="_error_CopyToProcessed" sca-bpel:internal="true"/>
-        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable name="FullFileName" type="xsd:string"/>
-        <bpws:variable element="ns0:RemoveActivityInputClass"
-            name="RemoveFile-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:RemoveActivityOutputClass"
-            name="RemoveFile" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityErrorData"
-            name="_error_RemoveFile" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:CopyActivityConfig"
-            name="CopyToError-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns4:ActivityErrorData"
-            name="_error_CopyToError" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:RemoveActivityInputClass"
-            name="RemoveFile1-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:RemoveActivityOutputClass"
-            name="RemoveFile1" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityErrorData"
-            name="_error_RemoveFile1" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityInput"
             name="NotProcessed-input" sca-bpel:internal="true"/>
+        <bpws:variable name="DestinationFullFileName" type="xsd:string"/>
+        <bpws:variable element="ns7:Element"
+            name="CopyFileThenDelete-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:Element" name="CopyFileThenDelete" sca-bpel:internal="true"/>
+        <bpws:variable name="GoodFileType" type="xsd:boolean">
+            <bpws:from>
+                <bpws:literal>true</bpws:literal>
+            </bpws:from>
+        </bpws:variable>
+        <bpws:variable element="ns3:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:Element" name="ReadFile-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:Result" name="ReadFile" sca-bpel:internal="true"/>
+        <bpws:variable element="ns7:Element" name="ErrFile-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:Element" name="ErrFile" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1432,10 +1147,22 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="FilePollerToLocalTransaction" tibex:linkType="SUCCESSWITHCONDITION"/>
-                <bpws:link name="FilePollerToLocalTransaction1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
-                <bpws:link name="LocalTransactionToLog" tibex:linkType="SUCCESS"/>
-                <bpws:link name="LocalTransaction1ToLog1" tibex:linkType="SUCCESS"/>
+                <bpws:link name="GoodFileTypeToReadFile"
+                    tibex:label="Good File" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link
+                    name="GoodFileType.AssignToFullFileName.Assign.WrongType" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link
+                    name="DestinationFullFileNameToCopyFileThenDelete" tibex:linkType="SUCCESS"/>
+                <bpws:link
+                    name="DestinationFullFileName.WrongTypeToCopy_1_CopyFileThenDelete" tibex:linkType="SUCCESS"/>
+                <bpws:link name="CopyFileThenDeleteToProcessingDone" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="CopyFileThenDeleteToNotProcessed" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link name="FilePollerToGoodFileType.Assign" tibex:linkType="SUCCESS"/>
+                <bpws:link name="CopyFileThenDeleteToLog" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="ReadFileToDestinationFullFileName" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link name="ReadFileToAssign" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="DestinationFileWithErrorToErrFile" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ErrFileToNotProcessed" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1443,20 +1170,7 @@
                     tibex:xpdlId="30a7e98b-f335-4a85-a223-181004fe443e"
                     variable="FilePoller" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="FilePollerToLocalTransaction">
-                            <tibex:DesignExpression>
-                                <tibex:expression
-                                    expression="(ends-with($FilePoller/fileInfo/fileName, bw:getModuleProperty('Process_File_Type'))) or ( bw:getModuleProperty('Process_File_Type') ='*')" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[(ends-with($FilePoller/fileInfo/fileName, bw:getModuleProperty('Process_File_Type'))) or ( bw:getModuleProperty('Process_File_Type') ='*')]]></bpws:transitionCondition>
-                        </bpws:source>
-                        <bpws:source linkName="FilePollerToLocalTransaction1">
-                            <tibex:DesignExpression>
-                                <tibex:expression
-                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
-                        </bpws:source>
+                        <bpws:source linkName="FilePollerToGoodFileType.Assign"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <bwext:BWActivity
@@ -1490,11 +1204,11 @@
                     name="ProcessingDone"
                     tibex:xpdlId="959479fc-d720-4d74-8ac6-48e522c9e083" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="LocalTransactionToLog"/>
+                        <bpws:target linkName="CopyFileThenDeleteToProcessingDone"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat('PROCESSING file processed: ', $FilePoller/fileInfo/fileName,' moved to: ', bw:getModuleProperty('Directory_Processed'))&quot;/>&lt;/message>&lt;/tns1:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns3=&quot;http://www.example.com/namespaces/tns/1593135555877&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;FilePoller&quot;/>&#xa;    &lt;xsl:param name=&quot;CopyFileThenDelete&quot;/>&#xa;    &lt;xsl:template name=&quot;ProcessingDone-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat('PROCESSING file processed: ', $FilePoller/fileInfo/fileName,' moved as: ', $CopyFileThenDelete/tns3:FullFileName)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns1:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1514,258 +1228,18 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:flow name="LocalTransaction" tibex:group="localTX"
-                tibex:txGroup="none" tibex:xpdlId="ebde7c3d-5479-4b78-a410-7b71af6a7584">
-                <bpws:targets>
-                    <bpws:target linkName="FilePollerToLocalTransaction"/>
-                </bpws:targets>
-                <bpws:sources>
-                    <bpws:source linkName="LocalTransactionToLog"/>
-                </bpws:sources>
-                <bpws:links>
-                    <bpws:link name="WrongFileTypeToRemoveFile" tibex:linkType="SUCCESS"/>
-                    <bpws:link
-                        name="WrongFileType.AssignToWrongFileType" tibex:linkType="SUCCESS"/>
-                    <bpws:link name="GroupStartToFullFileName.Assign" tibex:linkType="SUCCESS"/>
-                    <bpws:link name="RemoveFileToGroupEnd" tibex:linkType="SUCCESS"/>
-                </bpws:links>
-                <bpws:empty name="GroupStart" tibex:group="groupStart" tibex:xpdlId="acc572a9-2fec-4338-9569-86a3460c7684">
-                    <bpws:sources>
-                        <bpws:source linkName="GroupStartToFullFileName.Assign"/>
-                    </bpws:sources>
-                </bpws:empty>
-                <bpws:empty name="GroupEnd" tibex:group="groupEnd" tibex:xpdlId="98b4d7d5-cfe3-4ebb-be2a-412425860245">
-                    <bpws:targets>
-                        <bpws:target linkName="RemoveFileToGroupEnd"/>
-                    </bpws:targets>
-                </bpws:empty>
-                <bpws:extensionActivity>
-                    <tibex:activityExtension
-                        inputVariable="CopyToProcessed-input"
-                        name="CopyToProcessed"
-                        tibex:xpdlId="730a751c-b7aa-4a17-b37e-b8d6b6946bc4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                        <bpws:targets>
-                            <bpws:target linkName="WrongFileType.AssignToWrongFileType"/>
-                        </bpws:targets>
-                        <bpws:sources>
-                            <bpws:source linkName="WrongFileTypeToRemoveFile"/>
-                        </bpws:sources>
-                        <tibex:inputBindings>
-                            <tibex:inputBinding
-                                expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/file&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:param name=&quot;FullFileName&quot;/>&lt;xsl:template name=&quot;WrongFileType-input&quot; match=&quot;/&quot;>&lt;tns2:CopyActivityConfig>&lt;fromFileName>&lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&lt;/fromFileName>&lt;toFileName>&lt;xsl:value-of select=&quot;$FullFileName&quot;/>&lt;/toFileName>&lt;/tns2:CopyActivityConfig>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                        </tibex:inputBindings>
-                        <tibex:config>
-                            <bwext:BWActivity
-                                activityTypeID="bw.file.copy"
-                                xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                xmlns:file="http://ns.tibco.com/bw/palette/file" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                <activityConfig>
-                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/file#//CopyFile"/>
-                                    <value xsi:type="file:CopyFile"/>
-                                    </properties>
-                                </activityConfig>
-                            </bwext:BWActivity>
-                        </tibex:config>
-                    </tibex:activityExtension>
-                </bpws:extensionActivity>
-                <bpws:extensionActivity>
-                    <tibex:activityExtension
-                        inputVariable="FullFileName"
-                        name="FullFileName.Assign"
-                        outputVariable="FullFileName"
-                        tibex:xpdlId="cb796d2c-7dbb-4213-95c8-62b8e1ae5ab0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                        <bpws:targets>
-                            <bpws:target linkName="GroupStartToFullFileName.Assign"/>
-                        </bpws:targets>
-                        <bpws:sources>
-                            <bpws:source linkName="WrongFileType.AssignToWrongFileType"/>
-                        </bpws:sources>
-                        <tibex:inputBindings>
-                            <tibex:inputBinding
-                                expression="concat(bw:getModuleProperty('Directory_Processed'),'\',$FilePoller/fileInfo/fileName)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                        </tibex:inputBindings>
-                        <tibex:config>
-                            <bwext:BWActivity
-                                activityTypeID="bw.generalactivities.bwassign"
-                                xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                <activityConfig>
-                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
-                                    <value
-                                    processVariable="FullFileName" xsi:type="generalactivities:BWAssign"/>
-                                    </properties>
-                                </activityConfig>
-                            </bwext:BWActivity>
-                        </tibex:config>
-                    </tibex:activityExtension>
-                </bpws:extensionActivity>
-                <bpws:extensionActivity>
-                    <tibex:activityExtension
-                        inputVariable="RemoveFile-input"
-                        name="RemoveFile" outputVariable="RemoveFile"
-                        tibex:xpdlId="48635919-d4af-483c-99ee-09368a37c6c6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                        <bpws:targets>
-                            <bpws:target linkName="WrongFileTypeToRemoveFile"/>
-                        </bpws:targets>
-                        <bpws:sources>
-                            <bpws:source linkName="RemoveFileToGroupEnd"/>
-                        </bpws:sources>
-                        <tibex:inputBindings>
-                            <tibex:inputBinding
-                                expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/file&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;RemoveFile-input&quot; match=&quot;/&quot;>&lt;tns2:RemoveActivityInputClass>&lt;fileName>&lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&lt;/fileName>&lt;/tns2:RemoveActivityInputClass>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                        </tibex:inputBindings>
-                        <tibex:config>
-                            <bwext:BWActivity
-                                activityTypeID="bw.file.remove"
-                                xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                xmlns:file="http://ns.tibco.com/bw/palette/file" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                <activityConfig>
-                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/file#//RemoveFile"/>
-                                    <value xsi:type="file:RemoveFile"/>
-                                    </properties>
-                                </activityConfig>
-                            </bwext:BWActivity>
-                        </tibex:config>
-                    </tibex:activityExtension>
-                </bpws:extensionActivity>
-            </bpws:flow>
-            <bpws:flow name="LocalTransaction1" tibex:group="localTX"
-                tibex:txGroup="none" tibex:xpdlId="f35d1f1d-6413-4fc5-8984-957cdaa1ec70">
-                <bpws:targets>
-                    <bpws:target linkName="FilePollerToLocalTransaction1"/>
-                </bpws:targets>
-                <bpws:sources>
-                    <bpws:source linkName="LocalTransaction1ToLog1"/>
-                </bpws:sources>
-                <bpws:links>
-                    <bpws:link name="AssignToCopyFile" tibex:linkType="SUCCESS"/>
-                    <bpws:link name="CopyFileToRemoveFile1" tibex:linkType="SUCCESS"/>
-                    <bpws:link name="GroupStart1ToAssign" tibex:linkType="SUCCESS"/>
-                    <bpws:link name="RemoveFile1ToGroupEnd1" tibex:linkType="SUCCESS"/>
-                </bpws:links>
-                <bpws:empty name="GroupStart1" tibex:group="groupStart" tibex:xpdlId="42349870-3fbd-4530-85e2-44afa15c70b9">
-                    <bpws:sources>
-                        <bpws:source linkName="GroupStart1ToAssign"/>
-                    </bpws:sources>
-                </bpws:empty>
-                <bpws:empty name="GroupEnd1" tibex:group="groupEnd" tibex:xpdlId="418b5d88-d542-4fce-8f8b-52526b95908b">
-                    <bpws:targets>
-                        <bpws:target linkName="RemoveFile1ToGroupEnd1"/>
-                    </bpws:targets>
-                </bpws:empty>
-                <bpws:extensionActivity>
-                    <tibex:activityExtension
-                        inputVariable="FullFileName"
-                        name="FullFileName.Assign.WrongType"
-                        outputVariable="FullFileName"
-                        tibex:xpdlId="c5ed52a4-b602-4fda-8c83-bc30e8ee59c5" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                        <bpws:targets>
-                            <bpws:target linkName="GroupStart1ToAssign"/>
-                        </bpws:targets>
-                        <bpws:sources>
-                            <bpws:source linkName="AssignToCopyFile"/>
-                        </bpws:sources>
-                        <tibex:inputBindings>
-                            <tibex:inputBinding
-                                expression="concat(bw:getModuleProperty('Directory_Error'),'\',$FilePoller/fileInfo/fileName)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                        </tibex:inputBindings>
-                        <tibex:config>
-                            <bwext:BWActivity
-                                activityTypeID="bw.generalactivities.bwassign"
-                                xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                <activityConfig>
-                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
-                                    <value
-                                    processVariable="FullFileName" xsi:type="generalactivities:BWAssign"/>
-                                    </properties>
-                                </activityConfig>
-                            </bwext:BWActivity>
-                        </tibex:config>
-                    </tibex:activityExtension>
-                </bpws:extensionActivity>
-                <bpws:extensionActivity>
-                    <tibex:activityExtension
-                        inputVariable="CopyToError-input"
-                        name="CopyToError"
-                        tibex:xpdlId="22943379-3818-4c6d-9dd6-8ef2fe308dee" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                        <bpws:targets>
-                            <bpws:target linkName="AssignToCopyFile"/>
-                        </bpws:targets>
-                        <bpws:sources>
-                            <bpws:source linkName="CopyFileToRemoveFile1"/>
-                        </bpws:sources>
-                        <tibex:inputBindings>
-                            <tibex:inputBinding
-                                expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/file&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FullFileName&quot;/>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;CopyFile-input&quot; match=&quot;/&quot;>&lt;tns2:CopyActivityConfig>&lt;fromFileName>&lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&lt;/fromFileName>&lt;toFileName>&lt;xsl:value-of select=&quot;$FullFileName&quot;/>&lt;/toFileName>&lt;/tns2:CopyActivityConfig>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                        </tibex:inputBindings>
-                        <tibex:config>
-                            <bwext:BWActivity
-                                activityTypeID="bw.file.copy"
-                                xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                xmlns:file="http://ns.tibco.com/bw/palette/file" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                <activityConfig>
-                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/file#//CopyFile"/>
-                                    <value xsi:type="file:CopyFile"/>
-                                    </properties>
-                                </activityConfig>
-                            </bwext:BWActivity>
-                        </tibex:config>
-                    </tibex:activityExtension>
-                </bpws:extensionActivity>
-                <bpws:extensionActivity>
-                    <tibex:activityExtension
-                        inputVariable="RemoveFile1-input"
-                        name="RemoveFile1" outputVariable="RemoveFile1"
-                        tibex:xpdlId="fc426bb9-2a4a-482d-8ac2-4ae1b2d07dfe" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                        <bpws:targets>
-                            <bpws:target linkName="CopyFileToRemoveFile1"/>
-                        </bpws:targets>
-                        <bpws:sources>
-                            <bpws:source linkName="RemoveFile1ToGroupEnd1"/>
-                        </bpws:sources>
-                        <tibex:inputBindings>
-                            <tibex:inputBinding
-                                expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/file&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;RemoveFile1-input&quot; match=&quot;/&quot;>&lt;tns2:RemoveActivityInputClass>&lt;fileName>&lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&lt;/fileName>&lt;/tns2:RemoveActivityInputClass>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                        </tibex:inputBindings>
-                        <tibex:config>
-                            <bwext:BWActivity
-                                activityTypeID="bw.file.remove"
-                                xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                xmlns:file="http://ns.tibco.com/bw/palette/file" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                <activityConfig>
-                                    <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/file#//RemoveFile"/>
-                                    <value xsi:type="file:RemoveFile"/>
-                                    </properties>
-                                </activityConfig>
-                            </bwext:BWActivity>
-                        </tibex:config>
-                    </tibex:activityExtension>
-                </bpws:extensionActivity>
-            </bpws:flow>
             <bpws:extensionActivity>
                 <tibex:activityExtension
                     inputVariable="NotProcessed-input"
                     name="NotProcessed"
                     tibex:xpdlId="20d7c338-1cb1-4bdc-850e-8b4e83c2959e" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="LocalTransaction1ToLog1"/>
+                        <bpws:target linkName="CopyFileThenDeleteToNotProcessed"/>
+                        <bpws:target linkName="ErrFileToNotProcessed"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat('PROCESSING file: ', $FilePoller/fileInfo/fileName,' Not valid time, moved to ', bw:getModuleProperty('Directory_Error'))&quot;/>&lt;/message>&lt;/tns1:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;NotProcessed-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInput>&lt;logLevel>&lt;xsl:value-of select=&quot;'ERROR'&quot;/>&lt;/logLevel>&lt;message>&lt;xsl:value-of select=&quot;concat('PROCESSING file: ', $FilePoller/fileInfo/fileName,' Not processed')&quot;/>&lt;/message>&lt;/tns1:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1784,6 +1258,271 @@
                         </bwext:BWActivity>
                     </tibex:config>
                 </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="DestinationFullFileName"
+                    name="DestinationFullFileName"
+                    outputVariable="DestinationFullFileName"
+                    tibex:xpdlId="cb796d2c-7dbb-4213-95c8-62b8e1ae5ab0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ReadFileToDestinationFullFileName"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="DestinationFullFileNameToCopyFileThenDelete"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="concat( bw:getModuleProperty('Directory_Processed'),'\',$FilePoller/fileInfo/fileName)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.bwassign"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
+                                    <value
+                                    processVariable="DestinationFullFileName" xsi:type="generalactivities:BWAssign"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="DestinationFullFileName"
+                    name="DestinationFullFileName.WrongType"
+                    outputVariable="DestinationFullFileName"
+                    tibex:xpdlId="c5ed52a4-b602-4fda-8c83-bc30e8ee59c5" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="GoodFileType.AssignToFullFileName.Assign.WrongType"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="DestinationFullFileName.WrongTypeToCopy_1_CopyFileThenDelete"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="concat( bw:getModuleProperty('Directory_Error'),'\',$FilePoller/fileInfo/fileName)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.bwassign"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
+                                    <value
+                                    processVariable="DestinationFullFileName" xsi:type="generalactivities:BWAssign"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity
+                    inputVariable="CopyFileThenDelete-input"
+                    name="CopyFileThenDelete"
+                    outputVariable="CopyFileThenDelete"
+                    tibex:xpdlId="4c614c11-2bc1-4396-bf6a-316a6e4c9bcf"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="DestinationFullFileNameToCopyFileThenDelete"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="CopyFileThenDeleteToProcessingDone">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="($GoodFileType = true()) and ($CopyFileThenDelete/ns8:Success =true())" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[($GoodFileType = true()) and ($CopyFileThenDelete/ns8:Success =true())]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="CopyFileThenDeleteToNotProcessed">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="CopyFileThenDeleteToLog">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="($GoodFileType = false()) and ($CopyFileThenDelete/ns8:Success =true())" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[($GoodFileType = false()) and ($CopyFileThenDelete/ns8:Success =true())]]></bpws:transitionCondition>
+                        </bpws:source>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1593135260998&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;DestinationFullFileName&quot;/>&#xa;    &lt;xsl:param name=&quot;FilePoller&quot;/>&#xa;    &lt;xsl:template name=&quot;CopyFileThenDelete-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:Element>&#xa;            &lt;tns4:originFullName>&#xa;                &lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&#xa;            &lt;/tns4:originFullName>&#xa;            &lt;tns4:destinationFullName>&#xa;                &lt;xsl:value-of select=&quot;$DestinationFullFileName&quot;/>&#xa;            &lt;/tns4:destinationFullName>&#xa;            &lt;tns4:deleteOriginFile>&#xa;                &lt;xsl:value-of select=&quot;true()&quot;/>&#xa;            &lt;/tns4:deleteOriginFile>&#xa;        &lt;/tns4:Element>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess
+                        subProcessName="fileprocessing.tibco.module.CopyFileThenDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="GoodFileType"
+                    name="GoodFileType" outputVariable="GoodFileType"
+                    tibex:xpdlId="ba75295e-04b7-4cd5-bff9-ddfae1349b84" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="FilePollerToGoodFileType.Assign"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="GoodFileTypeToReadFile">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$GoodFileType" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$GoodFileType]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="GoodFileType.AssignToFullFileName.Assign.WrongType">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="(ends-with($FilePoller/fileInfo/fileName, bw:getModuleProperty('Process_File_Type'))) or ( bw:getModuleProperty('Process_File_Type') ='*')" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.bwassign"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
+                                    <value
+                                    processVariable="GoodFileType" xsi:type="generalactivities:BWAssign"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="Log-input"
+                    name="Log"
+                    tibex:xpdlId="09bcfe6c-c191-4ae0-942b-54ffc321f50c" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="CopyFileThenDeleteToLog"/>
+                    </bpws:targets>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns3=&quot;http://www.example.com/namespaces/tns/1593135555877&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:param name=&quot;CopyFileThenDelete&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat('PROCESSING file not processed: ', $FilePoller/fileInfo/fileName,' moved to: ', $CopyFileThenDelete/tns3:FullFileName)&quot;/>&lt;/message>&lt;/tns1:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.log"
+                            version="6.0.0.001"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+                                    <value role="Info"
+                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="ReadFile-input"
+                    name="ReadFile" outputVariable="ReadFile"
+                    tibex:xpdlId="cae7d3f0-f561-4a79-ba4a-d44ece08e69c"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="GoodFileTypeToReadFile"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ReadFileToDestinationFullFileName">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="ReadFileToAssign">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$ReadFile/ns10:result = false()" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$ReadFile/ns10:result = false()]]></bpws:transitionCondition>
+                        </bpws:source>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.example.com/namespaces/tns/1593135555877&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;ReadFile-input&quot; match=&quot;/&quot;>&lt;tns3:Element>&lt;tns3:FullFileName>&lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&lt;/tns3:FullFileName>&lt;tns3:Success>&lt;xsl:value-of select=&quot;true()&quot;/>&lt;/tns3:Success>&lt;/tns3:Element>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess
+                        subProcessName="fileprocessing.tibco.module.ReadFile" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="DestinationFullFileName"
+                    name="DestinationFileWithError"
+                    outputVariable="DestinationFullFileName"
+                    tibex:xpdlId="b2ce6997-e7d8-44c9-b30f-7ceb92ad2478" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ReadFileToAssign"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="DestinationFileWithErrorToErrFile"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="concat( bw:getModuleProperty('Directory_Error'),'\',$FilePoller/fileInfo/fileName)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.bwassign"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
+                                    <value
+                                    processVariable="DestinationFullFileName" xsi:type="generalactivities:BWAssign"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="ErrFile-input"
+                    name="ErrFile" outputVariable="ErrFile"
+                    tibex:xpdlId="2f0fe4c1-37c6-4e44-b33c-08b95b6ada53"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="DestinationFullFileName.WrongTypeToCopy_1_CopyFileThenDelete"/>
+                        <bpws:target linkName="DestinationFileWithErrorToErrFile"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="ErrFileToNotProcessed"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1593135260998&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;DestinationFullFileName&quot;/>&#xa;    &lt;xsl:param name=&quot;FilePoller&quot;/>&#xa;    &lt;xsl:template name=&quot;CopyFileThenDelete-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:Element>&#xa;            &lt;tns4:originFullName>&#xa;                &lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&#xa;            &lt;/tns4:originFullName>&#xa;            &lt;tns4:destinationFullName>&#xa;                &lt;xsl:value-of select=&quot;$DestinationFullFileName&quot;/>&#xa;            &lt;/tns4:destinationFullName>&#xa;            &lt;tns4:deleteOriginFile>&#xa;                &lt;xsl:value-of select=&quot;true()&quot;/>&#xa;            &lt;/tns4:deleteOriginFile>&#xa;        &lt;/tns4:Element>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess
+                        subProcessName="fileprocessing.tibco.module.CopyFileThenDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
             </bpws:extensionActivity>
         </bpws:flow>
     </bpws:scope>
