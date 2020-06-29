@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.example.org/Data.xsd" xmlns:tns="http://www.example.org/Data/" elementFormDefault="qualified" targetNamespace="http://www.example.org/Data.xsd">
+    
+    <element name="number15" type="int"/>
+    <element name="string640" type="string"/>
+    <element name="boolean41" type="boolean"/>
+    <element name="number4146" type="int"/>
+    <element name="string4755" type="string"/>
+    <element name="string5665" type="string"/>  
+	<element name="Data" type="Q1:cxData"/>
+	<element name="Datas" type="Q1:cxDatas"/>
+    <element name="Result" type="Q1:cxResult"/>
+
+	<complexType name="cxData">
+    		<sequence>
+    			<element maxOccurs="1" minOccurs="1" ref="Q1:number15"/>
+    			<element maxOccurs="1" minOccurs="1" ref="Q1:string640"/>
+    			<element maxOccurs="1" minOccurs="1" ref="Q1:boolean41"/>
+    			<element maxOccurs="1" minOccurs="1" ref="Q1:number4146"/>
+    			<element maxOccurs="1" minOccurs="0" ref="Q1:string4755"/>
+    			<element maxOccurs="1" minOccurs="0" ref="Q1:string5665"/>
+    		</sequence>
+    </complexType>
+        
+    <complexType name="cxDatas">
+    	<sequence>	
+    		<element maxOccurs="unbounded" minOccurs="0" ref="Q1:Data"/>
+    	</sequence>
+    </complexType>
+        
+    <complexType name="cxResult">
+    	<sequence>
+    		<element name="result" type="boolean" maxOccurs="1" minOccurs="1"></element>
+    		<element name="comment" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element maxOccurs="unbounded" minOccurs="0" ref="Q1:Data" ></element>
+    	</sequence>
+    </complexType>		
+</schema>
