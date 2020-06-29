@@ -1179,10 +1179,11 @@
                                     <styles fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <styles xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles restoreHeight="178"
+                                    <styles collapsed="true"
+                                    restoreHeight="178"
                                     restoreWidth="484" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catch.0"/>
-                                    <layoutConstraint height="178"
+                                    <layoutConstraint height="22"
                                     width="484" xsi:type="notation:Bounds"/>
                                 </children>
                                 <children type="4029">
@@ -1274,8 +1275,8 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity/@faultHandlers"/>
-                            <layoutConstraint height="380" width="494"
-                                x="22" xsi:type="notation:Bounds" y="320"/>
+                            <layoutConstraint height="224" width="494"
+                                x="22" xsi:type="notation:Bounds" y="213"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1285,7 +1286,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="701" width="534" x="1"
+                    <layoutConstraint height="438" width="534" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1294,7 +1295,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="646" width="876" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="577" width="876" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
