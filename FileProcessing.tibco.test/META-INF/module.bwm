@@ -13,4 +13,13 @@
   <sca:component xmi:id="_RSC6ULa1EeqhtOIjWFhXxQ" name="ComponentCreateFileWrongType" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_RSC6Uba1EeqhtOIjWFhXxQ" processName="fileprocessing.tibco.test.CreateFileWrongType"/>
   </sca:component>
+  <sca:component xmi:id="_t-tmwLc8EeqHTZTDRM7a2A" name="ComponentFileNotFoundJMS" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_t-tmwbc8EeqHTZTDRM7a2A" processName="fileprocessing.tibco.test.FileNotFoundJMS"/>
+  </sca:component>
+  <sca:component xmi:id="_I-R2cLmsEeqGb5Xu-HNO0w" name="ComponentCreateFileWithRows" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_I-R2cbmsEeqGb5Xu-HNO0w" processName="fileprocessing.tibco.test.CreateFileWithRows"/>
+  </sca:component>
+  <sca:component xmi:id="_nNoH8LnCEeqGb5Xu-HNO0w" name="ComponentCreateFileWrongData" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_nNoH8bnCEeqGb5Xu-HNO0w" processName="fileprocessing.tibco.test.CreateFileWrongData"/>
+  </sca:component>
 </sca:composite>
