@@ -989,8 +989,6 @@
                         <tibex:inputBinding
                             expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Q1=&quot;http://www.example.org/Data.xsd&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Result&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;Q1:Result>&lt;Q1:result>&lt;xsl:value-of select=&quot;$Result/Q1:result&quot;/>&lt;/Q1:result>&lt;xsl:if test=&quot;$Result/Q1:comment&quot;>&lt;Q1:comment>&lt;xsl:value-of select=&quot;$Result/Q1:comment&quot;/>&lt;/Q1:comment>&lt;/xsl:if>&lt;xsl:copy-of select=&quot;$Result/Q1:Data&quot;/>&lt;/Q1:Result>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
-                    <tibex:inputBinding
-                        expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:Q1="http://www.example.org/Data.xsd" version="2.0"&gt; &lt;xsl:template name="End-input" match="/"&gt; &lt;Q1:Datas/&gt;&lt;/xsl:template&gt; &lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                     <tibex:config>
                         <bwext:BWActivity
                             activityTypeID="bw.internal.end"
