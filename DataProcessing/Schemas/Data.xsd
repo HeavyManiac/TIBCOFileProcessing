@@ -30,9 +30,15 @@
         
     <complexType name="cxResult">
     	<sequence>
-    		<element name="result" type="boolean" maxOccurs="1" minOccurs="1"></element>
-    		<element name="comment" type="string" maxOccurs="1" minOccurs="0"></element>
-    		<element maxOccurs="unbounded" minOccurs="0" ref="Q1:Data" ></element>
+    		<element maxOccurs="1" minOccurs="1" name="result" type="boolean"/>
+    		<element maxOccurs="1" minOccurs="0" name="comment" type="string"/>
+    		<element maxOccurs="unbounded" minOccurs="0" ref="Q1:Data"/>
     	</sequence>
     </complexType>		
+    <complexType name="DataArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="Data" type="Q1:cxData"/>
+    </sequence>
+  </complexType>
+    <element name="DataArray" type="Q1:DataArray"/>
 </schema>
