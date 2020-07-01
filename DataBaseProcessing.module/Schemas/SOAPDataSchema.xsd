@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/schema/1593562316251" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://www.example.org/schema/1593562316251" xmlns:Q1="http://www.example.org/Data.xsd">
-    <import namespace="http://www.example.org/Data.xsd"></import>
-    <element name="inputDataRequest">
-    <complexType>
-      <sequence>
-      	<element name="Data" type="Q1:cxData"></element>
-      </sequence>
-    </complexType>
-  </element>
-  <element name="inputDataResponse">
-    <complexType>
-      <sequence>
-      	<element name="Result" type="Q1:cxResult"></element>
-      </sequence>
-    </complexType>
-  </element>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.example.org/schema/1593562316251"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="unqualified"
+	targetNamespace="http://www.example.org/schema/1593562316251"
+	xmlns:Q1="http://www.example.org/Data.xsd">
+
+
+	<import schemaLocation="../../DataProcessing/Schemas/Data.xsd" 
+		namespace="http://www.example.org/Data.xsd">
+	</import>
+	
+	<element name="inputDataRequest">
+		<complexType>
+			<sequence>
+
+				<element name="Data" type="Q1:cxData"></element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="inputDataResponse">
+		<complexType>
+			<sequence>
+
+				<element name="Result" type="Q1:cxResult"></element>
+			</sequence>
+		</complexType>
+	</element>
 </schema>
