@@ -58,6 +58,38 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//DataBaseProcessing.module//REST.Host</name>
+			<value>localhost</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//DataBaseProcessing.module//SOAP.Port</name>
+			<value>8081</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//DataBaseProcessing.module//SOAP.Host</name>
+			<value>localhost</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//DataBaseProcessing.module//REST.Port</name>
+			<value>8080</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//DataProcessing//BW.APPNODE.NAME</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
