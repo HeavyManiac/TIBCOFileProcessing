@@ -1,0 +1,84 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/data" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-data",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Data"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Result to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Data" : {
+      "type" : "object",
+      "required" : [ "number15", "boolean41", "string640", "number4146" ],
+      "properties" : {
+        "number15" : {
+          "type" : "integer"
+        },
+        "string640" : {
+          "type" : "string"
+        },
+        "boolean41" : {
+          "type" : "boolean"
+        },
+        "number4146" : {
+          "type" : "integer"
+        },
+        "string4755" : {
+          "type" : "string"
+        },
+        "string5665" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Result" : {
+      "type" : "object",
+      "required" : [ "result" ],
+      "properties" : {
+        "result" : {
+          "type" : "boolean"
+        },
+        "comment" : {
+          "type" : "string"
+        },
+        "Data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Data",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}
