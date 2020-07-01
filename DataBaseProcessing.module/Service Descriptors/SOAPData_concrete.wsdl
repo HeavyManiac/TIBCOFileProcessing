@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:tns="http://www.example.org/concrete/SOAPDataconcrete" 
+xmlns:tns0="http://www.example.org/schema/1593562316251" 
+xmlns:tns1="http://www.example.org/Data.xsd" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+name="SOAPData" targetNamespace="http://www.example.org/concrete/SOAPDataconcrete">
+
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.example.org/schema/1593562316251" 
+    			xmlns:Q1="http://www.example.org/Data.xsd" 
+    			elementFormDefault="unqualified" 
+    			targetNamespace="http://www.example.org/schema/1593562316251">
+    			
+      <xsd:import namespace="http://www.example.org/Data.xsd"/>
+      <xsd:element name="inputDataRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Data" type="Q1:cxData"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="inputDataResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Result" type="Q1:cxResult"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:Q1="http://www.example.org/Data.xsd" xmlns:tns="http://www.example.org/Data/" elementFormDefault="qualified" targetNamespace="http://www.example.org/Data.xsd">
+      <xsd:element name="number15" type="xsd:int"/>
+      <xsd:element name="string640" type="xsd:string"/>
+      <xsd:element name="boolean41" type="xsd:boolean"/>
+      <xsd:element name="number4146" type="xsd:int"/>
+      <xsd:element name="string4755" type="xsd:string"/>
+      <xsd:element name="string5665" type="xsd:string"/>
+      <xsd:element name="Data" type="Q1:cxData"/>
+      <xsd:element name="Datas" type="Q1:cxDatas"/>
+      <xsd:element name="Result" type="Q1:cxResult"/>
+      <xsd:complexType name="cxData">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:number15"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:string640"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:boolean41"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:number4146"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:string4755"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:string5665"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="cxDatas">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Q1:Data"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="cxResult">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="result" type="xsd:boolean"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="comment" type="xsd:string"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="Q1:Data"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DataArray">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Data" type="Q1:cxData"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DataArray" type="Q1:DataArray"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="inputDataRequest">
+    <wsdl:part element="tns0:inputDataRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="inputDataResponse">
+    <wsdl:part element="tns0:inputDataResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SOAPData">
+    <wsdl:operation name="inputData">
+      <wsdl:input message="tns:inputDataRequest" name="inputDataInput"/>
+      <wsdl:output message="tns:inputDataResponse" name="inputDataOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="tns:SOAPData">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="inputData">
+      <wsdl:documentation/>
+      <soap:operation soapAction="inputData" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPData">
+    <wsdl:port binding="tns:SOAPServiceBinding" name="SOAPDataSOAP">
+      <soap:address location="http://localhost:8081/SOAPServiceBinding/sOAPData/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
