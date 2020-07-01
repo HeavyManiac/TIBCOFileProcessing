@@ -1,7 +1,21 @@
 {
-    "records": [],
-    "resources": [{
-        "location": "Service Descriptors/databaseprocessing.module.RESTData-Data.json",
-        "type": "generated"
-    }]
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/databaseprocessing.module.RESTData-Data.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/RESTService.module.RESTData-Data.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/RESTService.module.RESTData-Resource.json",
+            "type": "generated"
+        }
+    ]
 }
