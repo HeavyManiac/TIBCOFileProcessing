@@ -15,6 +15,8 @@
   <sca:property xmi:id="_XG5hwLadEeqhtOIjWFhXxQ" name="Process_File_Type" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_vW6LMLasEeqhtOIjWFhXxQ" name="Poll_Directory_New" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_z1YhoLasEeqhtOIjWFhXxQ" name="Poll_Directory_InProgress" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_APqxILsYEeqtLbEEf6ECUQ" name="DB.REST.Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_GIwrcLsYEeqtLbEEf6ECUQ" name="DB.REST.Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_uT4t8LZqEeqSiZ09hI-04w" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_uT5VALZqEeqSiZ09hI-04w" processName="fileprocessing.tibco.module.NEWFilePoller"/>
   </sca:component>
