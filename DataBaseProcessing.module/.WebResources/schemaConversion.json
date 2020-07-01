@@ -1,5 +1,12 @@
-{"records": [{
-    "jsonSchemaLocation": "/DataBaseProcessing.module/Service Descriptors/databaseprocessing.module.RESTData-Data.json",
-    "conversionType": "linked",
-    "xsdSchemaTargetNamespace": "http://www.example.org/Data.xsd"
-}]}
+{"records": [
+    {
+        "jsonSchemaLocation": "/DataBaseProcessing.module/Service Descriptors/databaseprocessing.module.RESTData-Data.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Data.xsd"
+    },
+    {
+        "jsonSchemaLocation": "/DataBaseProcessing.module/Service Descriptors/RESTService.module.RESTData-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Data.xsd"
+    }
+]}
