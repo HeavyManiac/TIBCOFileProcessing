@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_QTJ1YLp0EeqL1NNVagyAcA" targetNamespace="http://tns.tibco.com/bw/composite/DataBaseProcessing.module" name="DataBaseProcessing.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
-  <sca:service xmi:id="_XnTQErqCEeqL1NNVagyAcA" name="data" promote="ComponentRESTData/data">
-    <sca:interface.wsdl xmi:id="_XnTQFrqCEeqL1NNVagyAcA" interface="http://xmlns.example.com/20200629213136PLT#wsdl.interface(data)" scaext:wsdlLocation="../Processes/databaseprocessing/module/RESTData.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_XnTQF7qCEeqL1NNVagyAcA" name="RestService" path="/data" docBasePath="http://localhost:7777/DataBaseProcessing.module" docResourcePath="Data" basePath="/" connector="databaseprocessing.module.Data" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/databaseprocessing.module.RESTData-Data.json">
-      <operation xmi:id="_XnTQGbqCEeqL1NNVagyAcA" operationName="post" nickname="post-data" httpMethod="POST" responseStyle="element" requestStyle="element" outputPartName="item">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:NewSoapData="http://www.example.org/wsdl/NewSoapData" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:parameters="http://xmlns.example.com/Data/parameters" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:wsdl_1593548978618="http://www.example.org/wsdl/1593548978618" xmi:id="_QTJ1YLp0EeqL1NNVagyAcA" targetNamespace="http://tns.tibco.com/bw/composite/DataBaseProcessing.module" name="DataBaseProcessing.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_8Nn2ALstEeqNULq70f_Ztw" name="data" promote="ComponentRESTData/data">
+    <sca:interface.wsdl xmi:id="_8N1RYLstEeqNULq70f_Ztw" interface="http://xmlns.example.com/20200630175955PLT#wsdl.interface(data)" scaext:wsdlLocation="../Processes/RESTService/module/RESTData.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_8N5i0LstEeqNULq70f_Ztw" name="RestService" path="/data" docBasePath="http://localhost:7777/DataBaseProcessing.module" docResourcePath="Resource" basePath="/" connector="databaseprocessing.module.RESTData" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/RESTService.module.RESTData-Resource.json">
+      <operation xmi:id="_8N9NMLstEeqNULq70f_Ztw" operationName="post" nickname="post-data" httpMethod="POST" responseStyle="element" requestStyle="element" outputPartName="item">
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
-      <operation xmi:id="_XnTQGrqCEeqL1NNVagyAcA" operationName="get" nickname="get-data" httpMethod="GET" responseStyle="element" requestStyle="element" outputPartName="item">
-        <clientFormat>json</clientFormat>
-        <clientRequestFormat>json</clientRequestFormat>
-      </operation>
-      <parameters xmi:id="_XnmyELqCEeqL1NNVagyAcA"/>
-      <advancedConfig xmi:id="_XnTQGLqCEeqL1NNVagyAcA" blockingQueueSize="2147483647"/>
+      <parameters xmi:id="_8OBeoLstEeqNULq70f_Ztw"/>
+      <advancedConfig xmi:id="_8N5i0bstEeqNULq70f_Ztw" blockingQueueSize="2147483647"/>
     </scaext:binding>
-    <scact:bindingAdjunct xmi:id="_XnTQG7qCEeqL1NNVagyAcA" bindingName="RestService"/>
+    <scact:bindingAdjunct xmi:id="_8N9NMbstEeqNULq70f_Ztw" bindingName="RestService"/>
   </sca:service>
   <sca:property xmi:id="_Q7LesLp0EeqL1NNVagyAcA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_Q7aIMLp0EeqL1NNVagyAcA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -23,10 +19,14 @@
   <sca:property xmi:id="_Q7oKoLp0EeqL1NNVagyAcA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_Q7r1ALp0EeqL1NNVagyAcA" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
   <sca:property xmi:id="_Q7vfYLp0EeqL1NNVagyAcA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:component xmi:id="_M-340LqCEeqL1NNVagyAcA" name="ComponentRESTData" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_M-340bqCEeqL1NNVagyAcA" processName="databaseprocessing.module.RESTData"/>
-    <sca:service xmi:id="_XnTQELqCEeqL1NNVagyAcA" name="data">
-      <sca:interface.wsdl xmi:id="_XnTQEbqCEeqL1NNVagyAcA" interface="http://xmlns.example.com/20200629213136PLT#wsdl.interface(data)"/>
+  <sca:property xmi:id="_jxCxMLsTEeqtLbEEf6ECUQ" name="REST.Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_p4BWgLsTEeqtLbEEf6ECUQ" name="SOAP.Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1lFakLsTEeqtLbEEf6ECUQ" name="SOAP.Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_13mG4LsTEeqtLbEEf6ECUQ" name="REST.Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_y9wNILstEeqNULq70f_Ztw" name="ComponentRESTData" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_y9wNIbstEeqNULq70f_Ztw" processName="RESTService.module.RESTData"/>
+    <sca:service xmi:id="_8NjkkLstEeqNULq70f_Ztw" name="data">
+      <sca:interface.wsdl xmi:id="_8NkysLstEeqNULq70f_Ztw" interface="http://xmlns.example.com/20200630175955PLT#wsdl.interface(data)"/>
     </sca:service>
   </sca:component>
 </sca:composite>
