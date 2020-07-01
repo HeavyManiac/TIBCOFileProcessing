@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:NewSoapData="http://www.example.org/wsdl/NewSoapData" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:parameters="http://xmlns.example.com/Data/parameters" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:wsdl_1593548978618="http://www.example.org/wsdl/1593548978618" xmi:id="_QTJ1YLp0EeqL1NNVagyAcA" targetNamespace="http://tns.tibco.com/bw/composite/DataBaseProcessing.module" name="DataBaseProcessing.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:NewSoapData="http://www.example.org/wsdl/NewSoapData" xmlns:SOAPDataInitial="http://www.example.org/wsdl/SOAPDataInitial" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:parameters="http://xmlns.example.com/Data/parameters" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:schema_1593562316251="http://www.example.org/schema/1593562316251" xmlns:wsdl_1593548978618="http://www.example.org/wsdl/1593548978618" xmi:id="_QTJ1YLp0EeqL1NNVagyAcA" targetNamespace="http://tns.tibco.com/bw/composite/DataBaseProcessing.module" name="DataBaseProcessing.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
   <sca:service xmi:id="_8Nn2ALstEeqNULq70f_Ztw" name="data" promote="ComponentRESTData/data">
     <sca:interface.wsdl xmi:id="_8N1RYLstEeqNULq70f_Ztw" interface="http://xmlns.example.com/20200630175955PLT#wsdl.interface(data)" scaext:wsdlLocation="../Processes/RESTService/module/RESTData.bwp"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_8N5i0LstEeqNULq70f_Ztw" name="RestService" path="/data" docBasePath="http://localhost:7777/DataBaseProcessing.module" docResourcePath="Resource" basePath="/" connector="databaseprocessing.module.RESTData" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/RESTService.module.RESTData-Resource.json">
@@ -11,6 +11,27 @@
       <advancedConfig xmi:id="_8N5i0bstEeqNULq70f_Ztw" blockingQueueSize="2147483647"/>
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_8N9NMbstEeqNULq70f_Ztw" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_vF440LsvEeqNULq70f_Ztw" name="SOAPData" promote="ComponentSOAPData/SOAPData">
+    <sca:interface.wsdl xmi:id="_vF441LsvEeqNULq70f_Ztw" interface="http://www.example.org/wsdl/SOAPDataInitial#wsdl.interface(SOAPData)" scaext:wsdlLocation="../Service%20Descriptors/SOAPData.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_xcjOMLsvEeqNULq70f_Ztw" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/f1a5ac67b97d428d990ba932673121f1/SOAPServiceBinding" portTypeQName="SOAPDataInitial:SOAPData" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData.wsdl">
+      <bindingType xmi:id="_xcuNULsvEeqNULq70f_Ztw"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_08dDkLsvEeqNULq70f_Ztw" endpointURI="/SOAPServiceBinding/sOAPData/" httpConnector="databaseprocessing.module.SOAPData"/>
+      <operationConfiguration xmi:id="_xcx3sLsvEeqNULq70f_Ztw" description="" operationName="inputData" action="inputData" actionNeeded="true">
+        <bindingType xmi:id="_xcx3sbsvEeqNULq70f_Ztw"/>
+        <messageConfiguration xmi:id="_xcx3srsvEeqNULq70f_Ztw" messageQName="SOAPDataInitial:inputDataRequest" wsdlLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_xcx3s7svEeqNULq70f_Ztw" partName="parameters" partElementName="schema_1593562316251:inputDataRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_xcx3tLsvEeqNULq70f_Ztw" messageQName="SOAPDataInitial:inputDataResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_xcx3tbsvEeqNULq70f_Ztw" partName="parameters" partElementName="schema_1593562316251:inputDataResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_xcyewLsvEeqNULq70f_Ztw">
+          <inputMapping xmi:id="_xczF0LsvEeqNULq70f_Ztw"/>
+          <outputMapping xmi:id="_xczF0bsvEeqNULq70f_Ztw" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_xczF0rsvEeqNULq70f_Ztw" bindingName="SOAPServiceBinding"/>
   </sca:service>
   <sca:property xmi:id="_Q7LesLp0EeqL1NNVagyAcA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_Q7aIMLp0EeqL1NNVagyAcA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -27,6 +48,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_y9wNIbstEeqNULq70f_Ztw" processName="RESTService.module.RESTData"/>
     <sca:service xmi:id="_8NjkkLstEeqNULq70f_Ztw" name="data">
       <sca:interface.wsdl xmi:id="_8NkysLstEeqNULq70f_Ztw" interface="http://xmlns.example.com/20200630175955PLT#wsdl.interface(data)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_cmEukLsvEeqNULq70f_Ztw" name="ComponentSOAPData" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cmEukbsvEeqNULq70f_Ztw" processName="SOAPService.module.SOAPData"/>
+    <sca:service xmi:id="_vF0nYLsvEeqNULq70f_Ztw" name="SOAPData">
+      <sca:interface.wsdl xmi:id="_vF0nYbsvEeqNULq70f_Ztw" interface="http://www.example.org/wsdl/SOAPDataInitial#wsdl.interface(SOAPData)" scaext:wsdlLocation="../Service%20Descriptors/SOAPData.wsdl"/>
     </sca:service>
   </sca:component>
 </sca:composite>
