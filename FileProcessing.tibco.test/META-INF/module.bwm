@@ -22,4 +22,7 @@
   <sca:component xmi:id="_nNoH8LnCEeqGb5Xu-HNO0w" name="ComponentCreateFileWrongData" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_nNoH8bnCEeqGb5Xu-HNO0w" processName="fileprocessing.tibco.test.CreateFileWrongData"/>
   </sca:component>
+  <sca:component xmi:id="_Y73SQLzSEeqG9KBZB6-EJQ" name="ComponentInsertOneRowGood" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Y73SQbzSEeqG9KBZB6-EJQ" processName="SQLData.tibco.test.InsertOneRowGood"/>
+  </sca:component>
 </sca:composite>
