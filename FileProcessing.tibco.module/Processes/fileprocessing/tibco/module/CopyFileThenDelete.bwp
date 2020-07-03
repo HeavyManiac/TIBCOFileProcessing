@@ -896,7 +896,7 @@
 
                                     <layoutConstraint
                                     x="286"
-                                    xsi:type="notation:Bounds" y="49"/>
+                                    xsi:type="notation:Bounds" y="40"/>
                                     </children>
 
                                     <children type="4002">
@@ -1903,8 +1903,7 @@
                     </bpws:targets>
                 </bpws:empty>
                 <bpws:scope name="RepeatOnError"
-                    tibex:group="repeatOnError"
-                    tibex:indexToGlobal="false" tibex:xpdlId="f7fe0a61-4913-401c-9fc6-bc6fd9362f81">
+                    tibex:group="repeatOnError" tibex:xpdlId="f7fe0a61-4913-401c-9fc6-bc6fd9362f81">
                     <bpws:targets>
                         <bpws:target linkName="GroupStartToRepeatOnError"/>
                     </bpws:targets>
