@@ -56,4 +56,7 @@
       <sca:interface.wsdl xmi:id="_vF0nYbsvEeqNULq70f_Ztw" interface="http://www.example.org/wsdl/SOAPDataInitial#wsdl.interface(SOAPData)" scaext:wsdlLocation="../Service%20Descriptors/SOAPData.wsdl"/>
     </sca:service>
   </sca:component>
+  <sca:component xmi:id="_xqtMgL2AEeqgwOf9OHUIbw" name="ComponentJMSData" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_xqtMgb2AEeqgwOf9OHUIbw" processName="JMSService.module.JMSData"/>
+  </sca:component>
 </sca:composite>
