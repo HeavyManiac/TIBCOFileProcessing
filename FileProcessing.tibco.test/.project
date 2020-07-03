@@ -3,6 +3,7 @@
 	<name>FileProcessing.tibco.test</name>
 	<comment></comment>
 	<projects>
+		<project>SQLDataProcess</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
