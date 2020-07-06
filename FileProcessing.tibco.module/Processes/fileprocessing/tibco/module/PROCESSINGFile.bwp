@@ -1534,7 +1534,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="701"
+                                    <layoutConstraint height="656"
                                     width="1382" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -1563,7 +1563,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="777" width="1727" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="732" width="1727" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -2335,7 +2335,8 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError" tibex:xpdlId="f4fdfd7b-6438-4fbb-9480-a6e34e9f1964">
+            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError"
+                tibex:indexToGlobal="false" tibex:xpdlId="f4fdfd7b-6438-4fbb-9480-a6e34e9f1964">
                 <bpws:targets>
                     <bpws:target linkName="RenderJSONToRepeatOnError"/>
                 </bpws:targets>
