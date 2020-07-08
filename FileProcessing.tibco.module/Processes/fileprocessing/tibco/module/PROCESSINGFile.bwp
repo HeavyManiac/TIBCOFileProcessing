@@ -944,8 +944,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
                                     <layoutConstraint
-                                    width="165" x="683"
-                                    xsi:type="notation:Bounds" y="82"/>
+                                    width="165" x="705"
+                                    xsi:type="notation:Bounds" y="326"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -980,8 +980,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
-                                    width="250" x="641"
-                                    xsi:type="notation:Bounds" y="558"/>
+                                    width="250" x="663"
+                                    xsi:type="notation:Bounds" y="706"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1016,7 +1016,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
                                     <layoutConstraint
-                                    width="160" x="838"
+                                    width="160" x="879"
                                     xsi:type="notation:Bounds" y="82"/>
                                     </children>
                                     <children type="4002">
@@ -1052,8 +1052,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.6"/>
                                     <layoutConstraint
-                                    width="139" x="-57"
-                                    xsi:type="notation:Bounds" y="100"/>
+                                    width="139" x="-56"
+                                    xsi:type="notation:Bounds" y="209"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1122,8 +1122,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.8"/>
-                                    <layoutConstraint x="120"
-                                    xsi:type="notation:Bounds" y="100"/>
+                                    <layoutConstraint x="108"
+                                    xsi:type="notation:Bounds" y="209"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1158,8 +1158,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.9"/>
                                     <layoutConstraint
-                                    width="170" x="681"
-                                    xsi:type="notation:Bounds" y="483"/>
+                                    width="170" x="703"
+                                    xsi:type="notation:Bounds" y="601"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1230,7 +1230,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.11"/>
                                     <layoutConstraint x="329"
-                                    xsi:type="notation:Bounds" y="100"/>
+                                    xsi:type="notation:Bounds" y="267"/>
                                     </children>
                                     <children type="4018">
                                     <children type="3018">
@@ -1484,7 +1484,7 @@
                                     <layoutConstraint
                                     height="221" width="305"
                                     x="245"
-                                    xsi:type="notation:Bounds" y="247"/>
+                                    xsi:type="notation:Bounds" y="374"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -1522,6 +1522,41 @@
                                     width="137" x="322"
                                     xsi:type="notation:Bounds" y="9"/>
                                     </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.14"/>
+                                    <layoutConstraint x="705"
+                                    xsi:type="notation:Bounds" y="9"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1534,7 +1569,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="656"
+                                    <layoutConstraint height="933"
                                     width="1382" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -1563,7 +1598,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="732" width="1727" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="1009" width="1727" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1576,7 +1611,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, 0, -416, 0]$[178, 0, -263, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[33, 0, -136, 0]$[145, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
@@ -1600,7 +1635,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.2"/>
             <bendpoints
-                points="[46, 0, -321, 0]$[185, 0, -182, 0]$[324, 0, -43, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[46, 13, -85, 231]$[48, 13, -83, 231]$[48, -205, -83, 13]$[88, -205, -43, 13]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
@@ -1612,7 +1647,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.3"/>
             <bendpoints
-                points="[88, 13, -105, 88]$[192, 13, -1, 88]$[192, -50, -1, 25]" xsi:type="notation:RelativeBendpoints"/>
+                points="[88, -24, -83, 199]$[181, -24, 10, 199]$[181, -198, 10, 25]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
@@ -1670,7 +1705,8 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.8"/>
-            <bendpoints points="[25, 0, -184, 0]$[185, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, 0, -196, 109]$[221, 0, 0, 109]$[221, -84, 0, 25]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
@@ -1694,7 +1730,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.10"/>
             <bendpoints
-                points="[48, 0, -327, 0]$[190, 0, -185, 0]$[332, 0, -43, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[36, -24, -135, 94]$[36, -113, -135, 5]$[128, -113, -43, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10"
@@ -1717,8 +1753,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.12"/>
-            <bendpoints
-                points="[135, 7, -239, 251]$[203, 7, -171, 251]$[203, -238, -171, 6]$[329, -238, -45, 6]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[135, 1, -261, -7]$[351, 1, -45, -7]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.11"
@@ -1729,7 +1764,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.13"/>
-            <bendpoints points="[8, -24, -59, 179]$[59, -178, -8, 25]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[-9, 25, -10, -161]$[-9, 93, -10, -93]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.12/@children.0/@children.2"
@@ -1786,19 +1821,18 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.15"/>
             <bendpoints
-                points="[25, 0, -184, 97]$[89, 0, -120, 97]$[89, -97, -120, 0]$[178, -97, -31, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, -9, -196, 191]$[87, -9, -134, 191]$[87, -192, -134, 8]$[190, -192, -31, 8]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.14" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.16"/>
-            <bendpoints
-                points="[32, 0, -343, -73]$[202, 0, -173, -73]$[202, 73, -173, 0]$[330, 73, -45, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[32, 6, -365, 0]$[373, 6, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.13"
@@ -1811,6 +1845,18 @@
             <element href="//0/@process/@activity/@activity/@links/@children.17"/>
             <bendpoints
                 points="[32, -18, -344, -492]$[272, -18, -104, -492]$[272, 462, -104, -12]$[328, 462, -48, -12]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.14"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.18"/>
+            <bendpoints
+                points="[25, 0, -127, -67]$[69, 0, -83, -67]$[69, 67, -83, 0]$[109, 67, -43, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1827,6 +1873,8 @@
         <tibex:namespaceItem namespace="http://www.example.org/Data.xsd" prefix="Q1"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+3c55bd32-6a66-46d9-8dea-42623424b030+RestInvokeInput" prefix="tns4"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.com/namespaces/tns/1593135260998" prefix="tns5"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1593135260998"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1593135555877"/>
@@ -1891,8 +1939,9 @@
                 <bpws:literal>true</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable element="ns10:Datas" name="AsyncPrcoessing-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns10:Result" name="AsyncPrcoessing" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:Datas"
+            name="AsyncDataProcessing-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:Result" name="AsyncDataProcessing" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1926,10 +1975,10 @@
                 <bpws:link
                     name="RepeatOnErrorToDestinationFileWithError" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                 <bpws:link name="ReadFileToAsyncPrcoessing" tibex:linkType="SUCCESSWITHCONDITION"/>
-                <bpws:link
-                    name="AsyncPrcoessingToDestinationFullFileName" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="AsyncPrcoessingToInProcessAsync" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link
                     name="AsyncPrcoessingToDestinationFileWithError" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link name="InProcessAsyncToCopyFileThenDelete" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -2029,12 +2078,11 @@
             <bpws:extensionActivity>
                 <tibex:activityExtension
                     inputVariable="DestinationFullFileName"
-                    name="DestinationFullFileName"
+                    name="InProcess"
                     outputVariable="DestinationFullFileName"
                     tibex:xpdlId="cb796d2c-7dbb-4213-95c8-62b8e1ae5ab0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="RepeatOnErrorToDestinationFullFileName"/>
-                        <bpws:target linkName="AsyncPrcoessingToDestinationFullFileName"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="DestinationFullFileNameToCopyFileThenDelete"/>
@@ -2102,6 +2150,7 @@
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="DestinationFullFileNameToCopyFileThenDelete"/>
+                        <bpws:target linkName="InProcessAsyncToCopyFileThenDelete"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="CopyFileThenDeleteToProcessingDone">
@@ -2128,10 +2177,10 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.example.com/namespaces/tns/1593135260998&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;DestinationFullFileName&quot;/>&#xa;    &lt;xsl:param name=&quot;FilePoller&quot;/>&#xa;    &lt;xsl:template name=&quot;CopyFileThenDelete-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:Element>&#xa;            &lt;tns5:originFullName>&#xa;                &lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&#xa;            &lt;/tns5:originFullName>&#xa;            &lt;tns5:destinationFullName>&#xa;                &lt;xsl:value-of select=&quot;$DestinationFullFileName&quot;/>&#xa;            &lt;/tns5:destinationFullName>&#xa;            &lt;tns5:deleteOriginFile>&#xa;                &lt;xsl:value-of select=&quot;true()&quot;/>&#xa;            &lt;/tns5:deleteOriginFile>&#xa;        &lt;/tns5:Element>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.example.com/namespaces/tns/1593135260998&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;DestinationFullFileName&quot;/>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;CopyFileThenDelete-input&quot; match=&quot;/&quot;>&lt;tns5:Element>&lt;tns5:originFullName>&lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&lt;/tns5:originFullName>&lt;tns5:destinationFullName>&lt;xsl:value-of select=&quot;$DestinationFullFileName&quot;/>&lt;/tns5:destinationFullName>&lt;tns5:deleteOriginFile>&lt;xsl:value-of select=&quot;true()&quot;/>&lt;/tns5:deleteOriginFile>&lt;/tns5:Element>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
-                        subProcessName="fileprocessing.tibco.module.CopyFileThenDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                        subProcessName="Utilities.CopyFileThenDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
@@ -2295,10 +2344,10 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.example.com/namespaces/tns/1593135260998&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;DestinationFullFileName&quot;/>&#xa;    &lt;xsl:param name=&quot;FilePoller&quot;/>&#xa;    &lt;xsl:template name=&quot;CopyFileThenDelete-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:Element>&#xa;            &lt;tns5:originFullName>&#xa;                &lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&#xa;            &lt;/tns5:originFullName>&#xa;            &lt;tns5:destinationFullName>&#xa;                &lt;xsl:value-of select=&quot;$DestinationFullFileName&quot;/>&#xa;            &lt;/tns5:destinationFullName>&#xa;            &lt;tns5:deleteOriginFile>&#xa;                &lt;xsl:value-of select=&quot;true()&quot;/>&#xa;            &lt;/tns5:deleteOriginFile>&#xa;        &lt;/tns5:Element>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.example.com/namespaces/tns/1593135260998&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;DestinationFullFileName&quot;/>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;ErrFile-input&quot; match=&quot;/&quot;>&lt;tns5:Element>&lt;tns5:originFullName>&lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fullName&quot;/>&lt;/tns5:originFullName>&lt;tns5:destinationFullName>&lt;xsl:value-of select=&quot;$DestinationFullFileName&quot;/>&lt;/tns5:destinationFullName>&lt;tns5:deleteOriginFile>&lt;xsl:value-of select=&quot;true()&quot;/>&lt;/tns5:deleteOriginFile>&lt;/tns5:Element>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
-                        subProcessName="fileprocessing.tibco.module.CopyFileThenDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                        subProcessName="Utilities.CopyFileThenDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
@@ -2505,21 +2554,22 @@
                 </bpws:repeatUntil>
             </bpws:scope>
             <bpws:extensionActivity>
-                <tibex:extActivity inputVariable="AsyncPrcoessing-input"
-                    name="AsyncPrcoessing"
-                    outputVariable="AsyncPrcoessing"
+                <tibex:extActivity
+                    inputVariable="AsyncDataProcessing-input"
+                    name="AsyncDataProcessing"
+                    outputVariable="AsyncDataProcessing"
                     tibex:xpdlId="71868415-7c93-4b84-861e-9a9efeba7eca"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="ReadFileToAsyncPrcoessing"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="AsyncPrcoessingToDestinationFullFileName">
+                        <bpws:source linkName="AsyncPrcoessingToInProcessAsync">
                             <tibex:DesignExpression>
                                 <tibex:expression
-                                    expression="$AsyncPrcoessing/ns10:result = true()" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$AsyncDataProcessing/ns10:result = true()" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$AsyncPrcoessing/ns10:result = true()]]></bpws:transitionCondition>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$AsyncDataProcessing/ns10:result = true()]]></bpws:transitionCondition>
                         </bpws:source>
                         <bpws:source linkName="AsyncPrcoessingToDestinationFileWithError">
                             <tibex:DesignExpression>
@@ -2531,11 +2581,44 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Q1=&quot;http://www.example.org/Data.xsd&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReadFile&quot;/>&lt;xsl:template name=&quot;AsyncPrcoessing-input&quot; match=&quot;/&quot;>&lt;Q1:Datas>&lt;xsl:copy-of select=&quot;$ReadFile/Q1:Data&quot;/>&lt;/Q1:Datas>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:Q1=&quot;http://www.example.org/Data.xsd&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ReadFile&quot;/>&lt;xsl:param name=&quot;FilePoller&quot;/>&lt;xsl:template name=&quot;AsyncPrcoessing-input&quot; match=&quot;/&quot;>&lt;Q1:Datas>&lt;Q1:FileName>&lt;xsl:value-of select=&quot;$FilePoller/fileInfo/fileName&quot;/>&lt;/Q1:FileName>&lt;xsl:copy-of select=&quot;$ReadFile/Q1:Data&quot;/>&lt;/Q1:Datas>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
-                        subProcessName="subprocess.tibco.module.AsyncPrcoessing" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                        subProcessName="subprocess.tibco.module.AsyncDataProcessing" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="DestinationFullFileName"
+                    name="InProcessAsync"
+                    outputVariable="DestinationFullFileName"
+                    tibex:xpdlId="16994230-5dd8-4abf-a753-1d543846f880" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="AsyncPrcoessingToInProcessAsync"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="InProcessAsyncToCopyFileThenDelete"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="concat( bw:getModuleProperty('Directory_InProcessAsync'),'\',$FilePoller/fileInfo/fileName)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.bwassign"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
+                                    <value
+                                    processVariable="DestinationFullFileName" xsi:type="generalactivities:BWAssign"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
             </bpws:extensionActivity>
         </bpws:flow>
     </bpws:scope>
