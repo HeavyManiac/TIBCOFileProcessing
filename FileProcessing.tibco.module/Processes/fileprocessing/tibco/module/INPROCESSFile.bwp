@@ -701,8 +701,9 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
-                                    <layoutConstraint x="457"
-                                    xsi:type="notation:Bounds" y="74"/>
+                                    <layoutConstraint
+                                    width="143" x="798"
+                                    xsi:type="notation:Bounds" y="169"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -736,9 +737,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint
-                                    width="143" x="798"
-                                    xsi:type="notation:Bounds" y="169"/>
+                                    <layoutConstraint x="452"
+                                    xsi:type="notation:Bounds" y="74"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -827,8 +827,8 @@
                                     <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
                                     width="253"
-                                    x="203"
-                                    xsi:type="notation:Bounds" y="17"/>
+                                    x="218"
+                                    xsi:type="notation:Bounds" y="20"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -844,7 +844,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity"/>
                                     <layoutConstraint
-                                    height="170" width="812" xsi:type="notation:Bounds"/>
+                                    height="140" width="902" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -984,25 +984,14 @@
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint x="49" xsi:type="notation:Location" y="-8"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[160, 0, -134, 22]$[270, 0, -24, 22]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -1013,7 +1002,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
@@ -1024,20 +1013,31 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="33023" xsi:type="notation:ConnectorStyle"/>
             <styles fontColor="33023" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
             <bendpoints
                 points="[25, 0, -326, -95]$[85, 0, -266, -95]$[85, 95, -266, 0]$[317, 95, -34, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
+            <bendpoints points="[25, 0, -322, 0]$[317, 0, -30, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1049,6 +1049,8 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/file" prefix="tns2"/>
         <tibex:namespaceItem
             namespace="http://www.example.com/namespaces/tns/1593135260998" prefix="tns3"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.com/namespaces/tns/1593135555877" prefix="tns4"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.tibco.com/namespaces/tnt/plugins/jmscustom4369b9cf-9bde-4ac7-89bd-5702bb88e2f9"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1593135260998"/>
@@ -1083,11 +1085,11 @@
         <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ActivityInput"
             name="IN_PROCESS_GENERAL_ERROR-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:ActivityInput"
+            name="FileNotInProcessLog-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:Element"
             name="CopyFileThenDelete-input" sca-bpel:internal="true"/>
         <bpws:variable element="tns1:Element" name="CopyFileThenDelete" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:ActivityInput"
-            name="FileNotInProcessLog-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1173,12 +1175,14 @@
         </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="CopyFileThenDeleteToLog_Copysuccess"
-                    tibex:label="Copy success" tibex:linkType="SUCCESSWITHCONDITION"/>
-                <bpws:link name="Destination.AssignToCopyFileThenDelete" tibex:linkType="SUCCESS"/>
+                <bpws:link
+                    name="Destination.AssignToCopyFileThenDelete1" tibex:linkType="SUCCESS"/>
                 <bpws:link name="OriginFile.AssignToDestination.Assign" tibex:linkType="SUCCESS"/>
                 <bpws:link name="JMSReceiveMessageToAssign1" tibex:linkType="SUCCESS"/>
-                <bpws:link name="CopyFileThenDeleteToLog1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link
+                    name="CopyFileThenDeleteToFileNotInProcessLog" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link
+                    name="CopyFileThenDeleteToFileInProcessedLog1" tibex:linkType="SUCCESSWITHCONDITION"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1219,11 +1223,11 @@
                     name="FileInProcessedLog"
                     tibex:xpdlId="f64afba8-c472-4111-a327-3b23fa9bfbed" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="CopyFileThenDeleteToLog_Copysuccess"/>
+                        <bpws:target linkName="CopyFileThenDeleteToFileInProcessedLog1"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1593135555877&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OriginFile&quot;/>&lt;xsl:param name=&quot;CopyFileThenDelete&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat('IN PROCESS \n File: ', $OriginFile,  ' Moved as: ', $CopyFileThenDelete/tns1:FullFileName )&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1593135555877&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OriginFile&quot;/>&lt;xsl:param name=&quot;CopyFileThenDelete&quot;/>&lt;xsl:template name=&quot;FileInProcessedLog-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;IN PROCESS \n File: &amp;quot;, $OriginFile, &amp;quot; Moved as: &amp;quot;, $CopyFileThenDelete/tns4:FullFileName)&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1252,7 +1256,7 @@
                         <bpws:target linkName="OriginFile.AssignToDestination.Assign"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="Destination.AssignToCopyFileThenDelete"/>
+                        <bpws:source linkName="Destination.AssignToCopyFileThenDelete1"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
@@ -1305,50 +1309,16 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:extActivity
-                    inputVariable="CopyFileThenDelete-input"
-                    name="CopyFileThenDelete"
-                    outputVariable="CopyFileThenDelete"
-                    tibex:xpdlId="60a65e12-95a4-4416-9195-0265846dd241"
-                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="Destination.AssignToCopyFileThenDelete"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="CopyFileThenDeleteToLog_Copysuccess">
-                            <tibex:DesignExpression>
-                                <tibex:expression
-                                    expression="$CopyFileThenDelete/tns1:Success = true()" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$CopyFileThenDelete/tns1:Success = true()]]></bpws:transitionCondition>
-                        </bpws:source>
-                        <bpws:source linkName="CopyFileThenDeleteToLog1">
-                            <tibex:DesignExpression>
-                                <tibex:expression
-                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
-                        </bpws:source>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.example.com/namespaces/tns/1593135260998&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OriginFile&quot;/>&lt;xsl:param name=&quot;Destination&quot;/>&lt;xsl:template name=&quot;CopyFileThenDelete-input&quot; match=&quot;/&quot;>&lt;tns3:Element>&lt;tns3:originFullName>&lt;xsl:value-of select=&quot;$OriginFile&quot;/>&lt;/tns3:originFullName>&lt;tns3:destinationFullName>&lt;xsl:value-of select=&quot;$Destination&quot;/>&lt;/tns3:destinationFullName>&lt;tns3:deleteOriginFile>&lt;xsl:value-of select=&quot;true()&quot;/>&lt;/tns3:deleteOriginFile>&lt;/tns3:Element>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:CallProcess
-                        subProcessName="fileprocessing.tibco.module.CopyFileThenDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
-                </tibex:extActivity>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
                 <tibex:activityExtension
                     inputVariable="FileNotInProcessLog-input"
                     name="FileNotInProcessLog"
                     tibex:xpdlId="8ddfb07a-7738-4e4d-b8e6-baf867fb13ec" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="CopyFileThenDeleteToLog1"/>
+                        <bpws:target linkName="CopyFileThenDeleteToFileNotInProcessLog"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1593135555877&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OriginFile&quot;/>&lt;xsl:param name=&quot;CopyFileThenDelete&quot;/>&lt;xsl:template name=&quot;FileNotInProcessLog-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat('IN PROCESS FAILED File: ', $OriginFile ,' Info:', $CopyFileThenDelete/tns1:FullFileName)&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns4=&quot;http://www.example.com/namespaces/tns/1593135555877&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OriginFile&quot;/>&lt;xsl:param name=&quot;CopyFileThenDelete&quot;/>&lt;xsl:template name=&quot;FileNotInProcessLog-input&quot; match=&quot;/&quot;>&lt;tns:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;IN PROCESS FAILED File: &amp;quot;, $OriginFile, &amp;quot; Info:&amp;quot;, $CopyFileThenDelete/tns4:FullFileName)&quot;/>&lt;/message>&lt;/tns:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1367,6 +1337,40 @@
                         </bwext:BWActivity>
                     </tibex:config>
                 </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity
+                    inputVariable="CopyFileThenDelete-input"
+                    name="CopyFileThenDelete"
+                    outputVariable="CopyFileThenDelete"
+                    tibex:xpdlId="e36a8281-2219-40ea-a885-d803b2baac01"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="Destination.AssignToCopyFileThenDelete1"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="CopyFileThenDeleteToFileInProcessedLog1">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$CopyFileThenDelete/tns1:Success = true()" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$CopyFileThenDelete/tns1:Success = true()]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="CopyFileThenDeleteToFileNotInProcessLog">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.example.com/namespaces/tns/1593135260998&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Destination&quot;/>&lt;xsl:param name=&quot;OriginFile&quot;/>&lt;xsl:template name=&quot;CopyFileThenDelete-input&quot; match=&quot;/&quot;>&lt;tns3:Element>&lt;tns3:originFullName>&lt;xsl:value-of select=&quot;$OriginFile&quot;/>&lt;/tns3:originFullName>&lt;tns3:destinationFullName>&lt;xsl:value-of select=&quot;$Destination&quot;/>&lt;/tns3:destinationFullName>&lt;tns3:deleteOriginFile>&lt;xsl:value-of select=&quot;true()&quot;/>&lt;/tns3:deleteOriginFile>&lt;/tns3:Element>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess
+                        subProcessName="Utilities.CopyFileThenDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
             </bpws:extensionActivity>
         </bpws:flow>
     </bpws:scope>
