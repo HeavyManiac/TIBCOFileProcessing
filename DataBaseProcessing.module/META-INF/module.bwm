@@ -59,4 +59,7 @@
   <sca:component xmi:id="_xqtMgL2AEeqgwOf9OHUIbw" name="ComponentJMSData" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_xqtMgb2AEeqgwOf9OHUIbw" processName="JMSService.module.JMSData"/>
   </sca:component>
+  <sca:component xmi:id="_s5hFcMChEeq0cMk0pMStqg" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_s5hFccChEeq0cMk0pMStqg" processName="SQLService.module.Process"/>
+  </sca:component>
 </sca:composite>
