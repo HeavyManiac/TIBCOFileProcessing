@@ -9,6 +9,7 @@
   <sca:property xmi:id="_uuKPILZqEeqSiZ09hI-04w" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_LnyaILadEeqhtOIjWFhXxQ" name="Directory_New" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_OFlSQLadEeqhtOIjWFhXxQ" name="Directory_InProgress" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0MkgkL_WEeq0cMk0pMStqg" name="Directory_InProcessAsync" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_RcDe0LadEeqhtOIjWFhXxQ" name="Directory_Processed" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_TJaYgLadEeqhtOIjWFhXxQ" name="Directory_Error" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_U-cAcLadEeqhtOIjWFhXxQ" name="Directory_Msg" type="XMLSchema:string" publicAccess="true" scalable="true"/>
@@ -25,5 +26,8 @@
   </sca:component>
   <sca:component xmi:id="_qeS7oLaaEeqhtOIjWFhXxQ" name="ComponentPROCESSINGFile" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_qeS7obaaEeqhtOIjWFhXxQ" processName="fileprocessing.tibco.module.PROCESSINGFile"/>
+  </sca:component>
+  <sca:component xmi:id="_gSMqkL_bEeq0cMk0pMStqg" name="ComponentJMSFileAsync" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gSMqkb_bEeq0cMk0pMStqg" processName="JMSfileprocessing.tibco.module.JMSFileAsync"/>
   </sca:component>
 </sca:composite>
