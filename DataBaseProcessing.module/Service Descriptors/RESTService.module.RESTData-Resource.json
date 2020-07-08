@@ -71,6 +71,9 @@
         "comment" : {
           "type" : "string"
         },
+        "FileName" : {
+          "type" : "string"
+        },
         "Data" : {
           "type" : "array",
           "items" : {
