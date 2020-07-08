@@ -5,7 +5,7 @@
       <xsd:sequence>
         <xsd:element maxOccurs="1" minOccurs="1" name="FullFileName" type="xsd:string"/>
         <xsd:element maxOccurs="1" minOccurs="1" name="Success" type="xsd:boolean"/>
-      </xsd:sequence>
+            </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
 </xsd:schema>
