@@ -74,6 +74,14 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>Directory_InProcessAsync</name>
+			<value>C:\tibco\files\FileProcessing\2.inprogressasync</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>Directory_Processed</name>
 			<value>C:\tibco\files\FileProcessing\3.processed</value>
 			<deploymentSettable>false</deploymentSettable>
