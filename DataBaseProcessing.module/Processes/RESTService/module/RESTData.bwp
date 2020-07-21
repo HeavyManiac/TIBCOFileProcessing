@@ -1074,9 +1074,9 @@
             <tibex:ReferenceBinding>
                 <tibex:binding>
                     <bwbinding:BWBaseBinding
+                        xmlns:SOAPDataconcrete="http://www.example.org/concrete/SOAPDataconcrete"
                         xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2"
                         xmlns:bwbinding="http://tns.tibco.com/bw/model/core/bwbinding"
-                        xmlns:pt="http://www.example.org/concrete/SOAPDataconcrete"
                         xmlns:sca="http://www.osoa.org/xmlns/sca/1.0"
                         xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType"
                         xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions"
@@ -1089,10 +1089,10 @@
                                 modelVersion="1.2.0"
                                 name="SOAPReferenceBinding"
                                 portName="SOAPDataSOAP"
-                                portTypeQName="pt:SOAPData"
+                                portTypeQName="SOAPDataconcrete:SOAPData"
                                 portTypeWSDLLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData_concrete.wsdl"
-                                serviceBindingQName="pt:SOAPServiceBinding"
-                                serviceQName="pt:SOAPData"
+                                serviceBindingQName="SOAPDataconcrete:SOAPServiceBinding"
+                                serviceQName="SOAPDataconcrete:SOAPData"
                                 transportBindingType="HTTP"
                                 wsdlLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData_concrete.wsdl" xsi:type="axis2:SOAPReferenceBinding">
                                 <bindingType style="DOCUMENT"/>
@@ -1101,7 +1101,7 @@
                                     <bindingType style="DOCUMENT"/>
                                     <messageConfiguration
                                     description="inputDataInput"
-                                    messageQName="pt:inputDataRequest" wsdlLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData_concrete.wsdl">
+                                    messageQName="SOAPDataconcrete:inputDataRequest" wsdlLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData_concrete.wsdl">
                                     <messagePartConfigurations
                                     encoding="literal"
                                     partElementName="schema_1593562316251:inputDataRequest"
@@ -1110,7 +1110,7 @@
                                     <messageConfiguration
                                     description="inputDataOutput"
                                     messageDirection="OUTPUT"
-                                    messageQName="pt:inputDataResponse" wsdlLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData_concrete.wsdl">
+                                    messageQName="SOAPDataconcrete:inputDataResponse" wsdlLocation="platform:/resource/DataBaseProcessing.module/Service%20Descriptors/SOAPData_concrete.wsdl">
                                     <messagePartConfigurations
                                     encoding="literal"
                                     partElementName="schema_1593562316251:inputDataResponse"
